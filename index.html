@@ -26,7 +26,12 @@
         <div class="bg-sky-600 px-8 py-6 text-white">
           <h1 class="text-3xl font-bold">ED Cell Registration</h1>
           <p class="text-blue-100 mt-2">
-            Please fill in your details to register.
+            The Department of Industries and Commerce, Government of Kerala, has
+            formulated a scheme to establish Entrepreneurship Development Clubs
+            in schools and colleges across the State. The initiative aims to
+            promote an entrepreneurial culture among young people and equip them
+            with the skills, knowledge and confidence required to become
+            successful entrepreneurs.
           </p>
         </div>
 
@@ -158,6 +163,28 @@
             />
           </div>
 
+          <!-- Interest -->
+          <div>
+            <label
+              for="interest"
+              class="block text-sm font-semibold text-gray-700 mb-2"
+            >
+              Area of Interest
+            </label>
+
+            <select
+              id="interest"
+              name="interest"
+              class="w-full rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
+            >
+              <option value="">Select Your Interest</option>
+              <option>Coding</option>
+              <option>Marketing</option>
+              <option>Electronics</option>
+              <option>Other</option>
+            </select>
+          </div>
+
           <!-- Validation / Success Message -->
           <div
             id="error-message"
@@ -199,7 +226,7 @@
       const messageBox = document.getElementById("error-message");
 
       const SCRIPT_URL =
-        "https://script.google.com/macros/s/AKfycby5H9OaWew0e83Lff51GTA8iovv996tBtuqX9RFehpyo_F7R1t__kzz7_Mt5V_5Gted/exec";
+        "https://script.google.com/macros/s/AKfycbyt334VQ0X1twFRSdNLmgHL8B4ghDUoI8M8jzeCyvsCNWobW2ka01OFU6-H1HNctZE/exec";
 
       // Message Functions
       function showMessage(message, type = "error") {
@@ -251,6 +278,7 @@
         const dob = form.dob.value;
         const address = form.address.value.trim();
         const mobile = form.mobile.value.trim();
+        const interest = form.interest.value.trim();
 
         if (!student) {
           showMessage("Please enter Name of Student.");
@@ -284,6 +312,10 @@
 
         if (!/^[6-9][0-9]{9}$/.test(mobile)) {
           showMessage("Enter a valid Contact Number with exactly 10 digits.");
+          return false;
+        }
+        if (!interest) {
+          showMessage("Please select your interested area");
           return false;
         }
 
