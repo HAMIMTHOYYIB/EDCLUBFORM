@@ -1,1 +1,367 @@
-abcd
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-slate-100 min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-2xl">
+      <header class="w-full bg-white shadow-md rounded-2xl mb-6">
+        <div class="max-w-5xl mx-auto px-6 py-6 flex justify-center">
+          <img
+            src="https://www.kmctctm.org/assets/images/KMCT-CTM-Vadakara.png"
+            alt="KMCT College Logo"
+            class="w-full max-w-4xl h-auto object-contain"
+          />
+        </div>
+      </header>
+
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <!-- Header -->
+        <div class="bg-sky-600 px-8 py-6 text-white">
+          <h1 class="text-3xl font-bold">ED Cell Registration</h1>
+          <p class="text-blue-100 mt-2">
+            The Department of Industries and Commerce, Government of Kerala, has
+            formulated a scheme to establish Entrepreneurship Development Clubs
+            in schools and colleges across the State. The initiative aims to
+            promote an entrepreneurial culture among young people and equip them
+            with the skills, knowledge and confidence required to become
+            successful entrepreneurs.
+          </p>
+        </div>
+
+        <!-- Form -->
+        <form id="submit-form" method="post" class="p-8 space-y-6">
+          <!-- Student Name -->
+          <div>
+            <label
+              for="student_name"
+              class="block text-sm font-semibold text-gray-700 mb-2"
+            >
+              Name of Student
+            </label>
+
+            <input
+              type="text"
+              id="student_name"
+              name="student_name"
+              autocomplete="name"
+              class="w-full rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
+            />
+          </div>
+
+          <!-- Department -->
+          <div>
+            <label
+              for="department"
+              class="block text-sm font-semibold text-gray-700 mb-2"
+            >
+              Department
+            </label>
+
+            <select
+              id="department"
+              name="department"
+              class="w-full rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
+            >
+              <option value="">Select Department</option>
+              <option>BTech CSE - 1st Year</option>
+              <option>BTech CSE - 2nd Year</option>
+              <option>BTech CS&BS - 1st Year</option>
+              <option>BTech AI DS - 1st Year</option>
+              <option>BTech AI DS - 2nd Year</option>
+              <option>BTech ECE - 1st Year</option>
+              <option>BTech ECE - 2nd Year</option>
+              <option>BCA</option>
+              <option>BBA</option>
+              <option>MBA</option>
+            </select>
+          </div>
+
+          <!-- Gender -->
+          <div>
+            <label
+              for="gender"
+              class="block text-sm font-semibold text-gray-700 mb-2"
+            >
+              Gender
+            </label>
+
+            <select
+              id="gender"
+              name="gender"
+              class="w-full rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
+            >
+              <option value="">Select Gender</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+
+          <!-- Date of Birth -->
+          <div>
+            <label
+              for="dob"
+              class="block text-sm font-semibold text-gray-700 mb-2"
+            >
+              Date of Birth
+            </label>
+
+            <input
+              type="date"
+              id="dob"
+              name="dob"
+              autocomplete="bday"
+              class="rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
+            />
+          </div>
+
+          <!-- Address -->
+          <div>
+            <label
+              for="address"
+              class="block text-sm font-semibold text-gray-700 mb-2"
+            >
+              Address
+            </label>
+
+            <textarea
+              id="address"
+              name="address"
+              rows="3"
+              autocomplete="street-address"
+              class="w-full rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
+            ></textarea>
+          </div>
+
+          <!-- Contact Number -->
+          <div>
+            <label
+              for="mobile"
+              class="block text-sm font-semibold text-gray-700 mb-2"
+            >
+              Contact Number
+            </label>
+
+            <input
+              type="tel"
+              id="mobile"
+              name="mobile"
+              inputmode="numeric"
+              maxlength="10"
+              placeholder="10-digit Mobile Number"
+              autocomplete="tel"
+              class="w-full rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
+            />
+          </div>
+
+          <!-- Interest -->
+          <div>
+            <label
+              for="interest"
+              class="block text-sm font-semibold text-gray-700 mb-2"
+            >
+              Area of Interest
+            </label>
+
+            <select
+              id="interest"
+              name="interest"
+              class="w-full rounded-lg border border-gray-300 px-4 py-3 transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
+            >
+              <option value="">Select Your Interest</option>
+              <option>Coding</option>
+              <option>Marketing</option>
+              <option>Electronics</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <!-- Validation / Success Message -->
+          <div
+            id="error-message"
+            class="hidden rounded-lg border px-4 py-3 text-sm font-medium transition-all duration-300"
+          ></div>
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            id="submit-btn"
+            class="w-full rounded-lg bg-sky-600 py-3 font-semibold text-white transition duration-200 hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+
+      <footer class="w-full max-w-5xl mx-auto mt-10">
+        <div class="bg-white rounded-2xl shadow-lg px-6 py-6 text-center">
+          <p class="text-gray-700 font-semibold">
+            KMCT College of Engineering for Emerging Technology and Management
+          </p>
+
+          <p class="text-gray-500 mt-2">Vadakara, Kerala</p>
+
+          <div class="border-t mt-5 pt-4">
+            <p class="text-sm text-gray-500">
+              © 2026 KMCT College of Engineering for Emerging Technology and
+              Management. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const form = document.getElementById("submit-form");
+      const submitBtn = document.getElementById("submit-btn");
+
+      const messageBox = document.getElementById("error-message");
+
+      const SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbyt334VQ0X1twFRSdNLmgHL8B4ghDUoI8M8jzeCyvsCNWobW2ka01OFU6-H1HNctZE/exec";
+
+      // Message Functions
+      function showMessage(message, type = "error") {
+        messageBox.textContent = message;
+
+        messageBox.className =
+          "rounded-lg border px-4 py-3 text-sm font-medium";
+
+        if (type === "success") {
+          messageBox.classList.add(
+            "bg-green-100",
+            "border-green-300",
+            "text-green-700",
+          );
+        } else {
+          messageBox.classList.add(
+            "bg-red-100",
+            "border-red-300",
+            "text-red-700",
+          );
+        }
+
+        messageBox.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }
+
+      function hideMessage() {
+        messageBox.className =
+          "hidden rounded-lg border px-4 py-3 text-sm font-medium";
+
+        messageBox.textContent = "";
+      }
+
+      // Hide message while typing
+      document.querySelectorAll("input, select, textarea").forEach((field) => {
+        field.addEventListener("input", hideMessage);
+        field.addEventListener("change", hideMessage);
+      });
+
+      // Validation
+      function validateForm() {
+        hideMessage();
+
+        const student = form.student_name.value.trim();
+        const dept = form.department.value;
+        const gender = form.gender.value;
+        const dob = form.dob.value;
+        const address = form.address.value.trim();
+        const mobile = form.mobile.value.trim();
+        const interest = form.interest.value.trim();
+
+        if (!student) {
+          showMessage("Please enter Name of Student.");
+          return false;
+        }
+
+        if (!dept) {
+          showMessage("Please select Department.");
+          return false;
+        }
+
+        if (!gender) {
+          showMessage("Please select Gender.");
+          return false;
+        }
+
+        if (!dob) {
+          showMessage("Please select Date of Birth.");
+          return false;
+        }
+
+        if (!address) {
+          showMessage("Please enter Address.");
+          return false;
+        }
+
+        if (!mobile) {
+          showMessage("Please enter Contact Number.");
+          return false;
+        }
+
+        if (!/^[6-9][0-9]{9}$/.test(mobile)) {
+          showMessage("Enter a valid Contact Number with exactly 10 digits.");
+          return false;
+        }
+        if (!interest) {
+          showMessage("Please select your interested area");
+          return false;
+        }
+
+        return true;
+      }
+
+      // Submit Form
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        if (!validateForm()) {
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Submitting...";
+
+        hideMessage();
+
+        try {
+          const response = await fetch(SCRIPT_URL, {
+            method: "POST",
+            body: new FormData(form),
+          });
+
+          if (!response.ok) {
+            throw new Error("Network Error");
+          }
+
+          const result = await response.text();
+
+          if (result.trim() !== "Success") {
+            throw new Error(result);
+          }
+
+          showMessage("Student details submitted successfully.", "success");
+
+          form.reset();
+        } catch (err) {
+          console.error(err);
+
+          showMessage("Submission failed. Please try again.", "error");
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Submit";
+        }
+      });
+    </script>
+  </body>
+</html>
